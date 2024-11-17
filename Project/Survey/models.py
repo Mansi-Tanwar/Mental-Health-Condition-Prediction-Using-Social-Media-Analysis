@@ -8,30 +8,30 @@ from scipy.stats import mode
 
 
 # Now set the relative path to your model directory
-#MODEL_DIR = '/opt/render/project/src/'
+MODEL_DIR = '/opt/render/project/src/'
 
 # Dictionary to hold models by type and condition
 loaded_models = {
     "autoencoder": {
-        "adhd": tf.keras.models.load_model('C:\\Users\\Mansi\\Downloads\\Mental-Health-Condition-Prediction-Using-Social-Media-Analysis\\auto_enc_adhd.h5'),
-        "anxiety": tf.keras.models.load_model('C:\\Users\\Mansi\\Downloads\\Mental-Health-Condition-Prediction-Using-Social-Media-Analysis\\auto_enc_anxiety.h5'),
-        "ptsd": tf.keras.models.load_model('C:\\Users\\Mansi\\Downloads\\Mental-Health-Condition-Prediction-Using-Social-Media-Analysis\\auto_enc_ptsd.h5'),
-        "bipolar": tf.keras.models.load_model('C:\\Users\\Mansi\\Downloads\\Mental-Health-Condition-Prediction-Using-Social-Media-Analysis\\auto_enc_bipolar.h5'),
-        "depression": tf.keras.models.load_model('C:\\Users\\Mansi\\Downloads\\Mental-Health-Condition-Prediction-Using-Social-Media-Analysis\\auto_enc_depression.h5')
+        "adhd": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'auto_enc_adhd.h5')),
+        "anxiety": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'auto_enc_anxiety.h5')),
+        "ptsd": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'auto_enc_ptsd.h5')),
+        "bipolar": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'auto_enc_bipolar.h5')),
+        "depression": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'auto_enc_depression.h5'))
     },
     "fcnn": {
-        "adhd": tf.keras.models.load_model('C:\\Users\\Mansi\\Downloads\\Mental-Health-Condition-Prediction-Using-Social-Media-Analysis\\fcnn_adhd.h5'),
-        "anxiety": tf.keras.models.load_model('C:\\Users\\Mansi\\Downloads\\Mental-Health-Condition-Prediction-Using-Social-Media-Analysis\\fcnn_anxiety.h5'),
-        "ptsd": tf.keras.models.load_model('C:\\Users\\Mansi\\Downloads\\Mental-Health-Condition-Prediction-Using-Social-Media-Analysis\\fcnn_ptsd.h5'),
-        "bipolar": tf.keras.models.load_model('C:\\Users\\Mansi\\Downloads\\Mental-Health-Condition-Prediction-Using-Social-Media-Analysis\\fcnn_bipolar.h5'),
-        "depression": tf.keras.models.load_model('C:\\Users\\Mansi\\Downloads\\Mental-Health-Condition-Prediction-Using-Social-Media-Analysis\\fcnn_depression.h5')
+        "adhd": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'fcnn_adhd.h5')),
+        "anxiety": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'fcnn_anxiety.h5')),
+        "ptsd": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'fcnn_ptsd.h5')),
+        "bipolar": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'fcnn_bipolar.h5')),
+        "depression": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'fcnn_depression.h5'))
     },
     "resnet": {
-        "adhd": tf.keras.models.load_model('C:\\Users\\Mansi\\Downloads\\Mental-Health-Condition-Prediction-Using-Social-Media-Analysis\\resnet_adhd.h5'),
-        "anxiety": tf.keras.models.load_model('C:\\Users\\Mansi\\Downloads\\Mental-Health-Condition-Prediction-Using-Social-Media-Analysis\\resnet_anxiety.h5'),
-        "ptsd": tf.keras.models.load_model('C:\\Users\\Mansi\\Downloads\\Mental-Health-Condition-Prediction-Using-Social-Media-Analysis\\resnet_ptsd.h5'),
-        "bipolar": tf.keras.models.load_model('C:\\Users\\Mansi\\Downloads\\Mental-Health-Condition-Prediction-Using-Social-Media-Analysis\\resnet_bipolar.h5'),
-        "depression": tf.keras.models.load_model('C:\\Users\\Mansi\\Downloads\\Mental-Health-Condition-Prediction-Using-Social-Media-Analysis\\resnet_depression.h5')
+        "adhd": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'resnet_adhd.h5')),
+        "anxiety": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'resnet_anxiety.h5')),
+        "ptsd": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'resnet_ptsd.h5')),
+        "bipolar": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'resnet_bipolar.h5')),
+        "depression": tf.keras.models.load_model(os.path.join(MODEL_DIR, 'resnet_depression.h5'))
     }
 }
 
