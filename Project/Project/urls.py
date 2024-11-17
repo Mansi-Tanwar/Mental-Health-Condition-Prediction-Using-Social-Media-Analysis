@@ -1,7 +1,7 @@
 # Project/urls.py
 from django.contrib import admin
 from django.urls import path, include
-from survey import views
+from Survey import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
