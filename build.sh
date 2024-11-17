@@ -2,23 +2,18 @@
 # Exit on error
 set -o errexit
 
-# Modify this line as needed for your package manager (pip, poetry, etc.)
-pip install -r requirements.txt
+# Ensure the local Python user package directory is in PATH
+export PATH=$HOME/.local/bin:$PATH
+
+# Upgrade pip and install dependencies globally (in user space)
+pip install --no-cache-dir --user --upgrade pip
+pip install --no-cache-dir --user -r requirements.txt
 
 # Navigate to the 'Project' folder where manage.py is located
 cd Project
 
-pip install --upgrade pip
-
-
-# Update the app by creating survey if it's missing
-#python manage.py startapp survey
-
-pip freeze
-
-# Convert static asset files
+# Collect static files (e.g., CSS, JS) without user input
 python manage.py collectstatic --no-input
 
-# Apply any outstanding database migrations
+# Apply database migrations
 python manage.py migrate
-
