@@ -127,9 +127,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'  # Add a forward slash before "static"
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static',  # This tells Django to look for static files in the "static" folder of your project
-# ]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Directory for static files collection
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  # This tells Django to look for static files in the "static" folder of your project
+]
 
 # This production code might break development mode, so we check whether we're in DEBUG mode
 if not DEBUG:
@@ -138,6 +140,7 @@ if not DEBUG:
     # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
     # and renames the files with unique names for each version to support long-term caching
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 
 # Default primary key field type
