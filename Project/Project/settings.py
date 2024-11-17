@@ -129,9 +129,9 @@ STATIC_URL = '/static/'  # Add a forward slash before "static"
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Directory for static files collection
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # This tells Django to look for static files in the "static" folder of your project
-]
+# STATICFILES_DIRS = [
+    # BASE_DIR / 'static',  # This tells Django to look for static files in the "static" folder of your project
+# ]
 
 # This production code might break development mode, so we check whether we're in DEBUG mode
 if not DEBUG:
