@@ -6,8 +6,8 @@ set -o errexit
 export PATH=$HOME/.local/bin:$PATH
 
 # Upgrade pip and install dependencies globally (in user space)
-pip install --no-cache-dir --user --upgrade pip
-pip install --no-cache-dir --user -r requirements.txt
+pip install --no-cache-dir --upgrade pip
+pip install --no-cache-dir -r requirements.txt
 
 # Navigate to the 'Project' folder where manage.py is located
 cd Project
