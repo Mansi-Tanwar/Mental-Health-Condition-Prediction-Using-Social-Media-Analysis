@@ -11,5 +11,12 @@ cd Project
 echo "Directory structure:"
 ls -R
 
+# Check Python version
+python --version
+
+# Check if 'Survey' is accessible
+python -c "import Survey"
+
+
 python manage.py collectstatic --no-input
 python manage.py migrate
