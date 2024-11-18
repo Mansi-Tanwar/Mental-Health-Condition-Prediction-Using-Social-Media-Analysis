@@ -14,9 +14,8 @@ from pathlib import Path
 import os
 import dj_database_url
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+# BASE_DIR is usually defined like this:
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -29,6 +28,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = []
 
+# Check if the Survey app directory exists
+if not os.path.isdir(os.path.join(BASE_DIR, 'Survey')):
+    raise Exception("Survey app directory not found!")
 
 # Application definition
 
