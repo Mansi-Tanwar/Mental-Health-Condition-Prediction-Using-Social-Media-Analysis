@@ -15,7 +15,13 @@ ls -R
 python --version
 
 # Check if 'Survey' is accessible
-python -c "import Survey"
+echo "Checking if 'Survey' is importable..."
+python -c "try:
+    import Survey
+    print('Survey app is imported successfully.')
+except ImportError:
+    print('Error: Survey app is not imported.')" 
+
 
 
 python manage.py collectstatic --no-input
