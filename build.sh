@@ -1,28 +1,24 @@
 #!/usr/bin/env bash
 set -o errexit
 
-# Use the system Python interpreter
+# Print the current working directory
+echo "Current working directory: $(pwd)"
+
+# Print the Python module search path
+echo "Python search path: $PYTHONPATH"
+python -c "import sys; print(sys.path)"
+
+# Try importing the Survey app
+python -c "import Survey; print('Survey app imported successfully')"
+
+# Install dependencies
 python -m pip install --no-cache-dir --upgrade pip
 python -m pip install --no-cache-dir -r requirements.txt
 
 cd Project
 
-# Print the directory structure to confirm Survey's location
-echo "Directory structure:"
-ls -R
-
-# Check Python version
-python --version
-
-# Check if 'Survey' is accessible
-echo "Checking if 'Survey' is importable..."
-python -c "try:
-    import Survey
-    print('Survey app is imported successfully.')
-except ImportError:
-    print('Error: Survey app is not imported.')" 
-
-
-
+# Collect static files
 python manage.py collectstatic --no-input
+
+# Apply database migrations
 python manage.py migrate
