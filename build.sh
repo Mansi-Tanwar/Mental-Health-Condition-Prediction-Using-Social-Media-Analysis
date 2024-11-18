@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -o errexit
 
+cd Project
+
 # Print the current working directory
 echo "Current working directory: $(pwd)"
 
@@ -15,7 +17,6 @@ python -c "import Survey; print('Survey app imported successfully')"
 python -m pip install --no-cache-dir --upgrade pip
 python -m pip install --no-cache-dir -r requirements.txt
 
-cd Project
 
 # Collect static files
 python manage.py collectstatic --no-input
