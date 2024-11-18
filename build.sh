@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -o errexit
 
+# Install dependencies
+python -m pip install --no-cache-dir --upgrade pip
+python -m pip install --no-cache-dir -r requirements.txt
+
 cd Project
 
 # Print the current working directory
@@ -12,10 +16,6 @@ python -c "import sys; print(sys.path)"
 
 # Try importing the Survey app
 python -c "import Survey; print('Survey app imported successfully')"
-
-# Install dependencies
-python -m pip install --no-cache-dir --upgrade pip
-python -m pip install --no-cache-dir -r requirements.txt
 
 
 # Collect static files
