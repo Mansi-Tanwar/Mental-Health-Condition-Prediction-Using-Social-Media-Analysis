@@ -17,6 +17,13 @@ python -c "import sys; print(sys.path)"
 # Try importing the Survey app
 python -c "import Survey; print('Survey app imported successfully')"
 
+cd Survey
+# Print the current working directory
+echo "Current working directory: $(pwd)"
+
+# List all files in the Survey directory
+echo "Listing files in the Survey directory:"
+ls -al
 
 # Collect static files
 python manage.py collectstatic --no-input
@@ -24,4 +31,3 @@ python manage.py collectstatic --no-input
 # Apply database migrations
 python manage.py migrate
 
-cd ..
