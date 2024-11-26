@@ -3,7 +3,7 @@ databases:
     plan: free
     databaseName: itproject
     user: user1
-    # password: Aastha          # Password for the 'postgres' user
+    # password: Aastha  # Password for the 'postgres' user
     # host: your-database-name.onrender.com  # Replace with Render's database hostname (provided by Render)
     # port: 5432
 
