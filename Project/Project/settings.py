@@ -36,7 +36,7 @@ if not os.path.isdir(os.path.join(BASE_DIR, 'Survey')):
 
 INSTALLED_APPS = [
     # 'Survey.apps.SurveyConfig',
-    'Project.Survey',
+    'Survey',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
