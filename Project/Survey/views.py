@@ -7,7 +7,7 @@ from .models import SurveyResponse, loaded_models, make_pred
 gender_map = {'Male': 0, 'Female': 1, 'Other': 2}
 relationship_map = {'Single': 0, 'Married': 1, 'In a relationship': 2, 'Divorced': 3}
 social_media_map = {'Yes':0, 'No':1}
-time_on_sm_map = {'Less than an Hour':0, 'Between 1 and 2 hours':1, 'Between 2 and 3 hours':2, 'Between 3 and 4 hours':3, 'Between 4 and 5 hours':4, 'More than 5 hour':5}
+time_on_sm_map = {'Less than an Hour':0, 'Between 1 and 2 hours':1, 'Between 2 and 3 hours':2, 'Between 3 and 4 hours':3, 'Between 4 and 5 hours':4, 'More than 5 hours':5}
 # q6_map = {1:0, 2:1, 3:2, 4:3, 5:4}
 # q7_map = {1:0, 2:1, 3:2, 4:3, 5:4}
 # q8_map = {1:0, 2:1, 3:2, 4:3, 5:4}        
