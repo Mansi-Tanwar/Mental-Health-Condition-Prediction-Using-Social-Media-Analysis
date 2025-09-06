@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-94i=rj9c$j!1gf8$^z8^i&sd&d(k2j6@b*6z&49onaq8#fbp(5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "0.0.0.0"]
 
 # Check if the Survey app directory exists
 if not os.path.isdir(os.path.join(BASE_DIR, 'Survey')):
@@ -82,13 +82,22 @@ WSGI_APPLICATION = 'Project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://postgres:Aastha@localhost:5432/itproject',
-        conn_max_age=600
-    )
-}
+import dj_database_url
+
+DATABASE_URL = os.environ.get('DATABASE_URL')
+if DATABASE_URL:
+    DATABASES = {
+        'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600)
+    }
+else:
+    # fallback to sqlite for local testing
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / "db.sqlite3",
+        }
+    }
+
 
 
 # Password validation
