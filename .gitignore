@@ -11,9 +11,6 @@ db.sqlite3
 /staticfiles
 /media
 
-# ML Models
-*.h5
-/models/
 
 # OS
 .DS_Store
