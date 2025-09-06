@@ -1,10 +1,33 @@
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
+
+# Virtual environments
+venv/
+.env
+
+# Databases
 *.sqlite3
 *.db
-.env
+
+# Django static & media (don’t copy collected/static data into image)
+staticfiles/
+media/
+
+# Git & VCS
+.git/
+.gitignore
+
+# IDE / Editor
 .vscode/
 .idea/
-.git/
+
+# Docker files (to avoid recursive COPY)
+Dockerfile
+.dockerignore
+
+# System / OS
+.DS_Store
+Thumbs.db
